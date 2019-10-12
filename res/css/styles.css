@@ -62,6 +62,7 @@ footer .links a:hover{
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
+
 #profile div:not(.clear-fix){
     height: 190px;
     float: left;
@@ -117,6 +118,7 @@ table td{
 }
 .content .tab{
     display: none;
+
 }
 .content .tab.active{
     display: block;
