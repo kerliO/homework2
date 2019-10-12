@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    let user=new User('Jane',
+    let user=new User('John',
         'Doe',
-        '17/01/1990',
-        'Faculty of Science and Technology',
-        0
+        '11/01/1990',
+        'Software Engineering',
+        2.75
     );
     let courses=[
         new Course('Machine Learning', 1, 99),
@@ -28,6 +28,9 @@ $(document).ready(function(){
         $('.content button#add-course-button.blue-button').click(function (event) {
             // alert("You clicked me!")
             $("#add-course").toggle();
+        });
+        $('button#cancel-course.grey-button').click(function (event) {
+             refreshToDefault()
         });
         $("button#courses tbody").empty();
         for (let i=0; i < courses.length; i++) {
@@ -85,6 +88,10 @@ $(document).ready(function(){
                 }
                 return points/courses.length;
             }
+        $("#name").text(user.firstname + " " + user.lastname);
+        $("#birthdate").text(user.birthdate);
+        $("#faculty").text(user.faculty);
+        $("#gpa strong").text(user.gpa);
     }
 });
 
