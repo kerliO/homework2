@@ -5,11 +5,11 @@ $(document).ready(function(){
         'Software Engineering',
         2.75
     );
-    let courses=[
-        new Course('Machine Learning', 1, 99),
-        new Course('Business Data Analytics', 1, 91),
-        new Course('Programming Languages', 2, 95),
-        new Course('School Software', 2, 81)
+      let courses=[
+        new Course('Alige software development', 1, 82),
+        new Course('System modeling', 1, 85),
+        new Course('Objekt-oriented programming', 2, 99),
+        new Course('Estonian language Level A2', 2, 65)
     ];
     init(); //initialize dynamical population
     function init() {
