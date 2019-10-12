@@ -3,7 +3,7 @@ $(document).ready(function(){
         'Doe',
         '17/01/1990',
         'Faculty of Science and Technology',
-        4.5
+        0
     );
     let courses=[
         new Course('Machine Learning', 1, 99),
@@ -56,12 +56,35 @@ $(document).ready(function(){
             table.append($('<td>').text(grade));
             refreshToDefault()
             courses.push(new Course(title, semester, grade));
+            $("#gpa strong").text(avgGPA());
         });
         function refreshToDefault() {
             $('.input').val('');
             $('button#add-course').hide();
         }
 
+        function avgGPA() {
+                let points = 0;
+                for (let i = 0; i < courses.length; i++) {
+                    let grade = courses[i].grade;
+                    if (grade > 90) {
+                        points += 4;
+                    }
+                    else if (grade > 80) {
+                        points += 3;
+                    }
+                    else if (grade > 70) {
+                        points += 2;
+                    }
+                    else if (grade > 60) {
+                        points += 1;
+                    }
+                    else if (grade > 50) {
+                        points += 0.5;
+                    }
+                }
+                return points/courses.length;
+            }
     }
 });
 
