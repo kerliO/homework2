@@ -62,6 +62,7 @@ $(document).ready(function(){
             table.append($('<td>').text(semester));
             table.append($('<td>').text(grade));
             refreshToDefault();
+            $("#add-course").toggle();
             courses.push(new Course(title, semester, grade));
             $("#gpa strong").text(avgGPA());
         });
