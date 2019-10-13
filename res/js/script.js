@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     let courses=[
-        new Course('Alige software development', 1, 82),
+        new Course('Agile software development', 1, 82),
         new Course('System modeling', 1, 85),
         new Course('Objekt-oriented programming', 2, 99),
         new Course('Estonian language Level A2', 2, 65)
@@ -10,7 +10,7 @@ $(document).ready(function(){
     let user=new User('John',
         'Doe',
         '11/10/1990',
-        'Sftware Engeneering',
+        'Software Engineering',
         2.75
     );
     init(); //initialize dynamical population
@@ -61,9 +61,14 @@ $(document).ready(function(){
             table.append($('<td>').text(title));
             table.append($('<td>').text(semester));
             table.append($('<td>').text(grade));
-            refreshToDefault()
+            refreshToDefault();
             courses.push(new Course(title, semester, grade));
             $("#gpa strong").text(avgGPA());
+        });
+
+        $('button#cancel-course.grey-button').click(function (event) {
+            refreshToDefault();
+            $("#add-course").toggle();
         });
 
         function refreshToDefault() {
@@ -96,7 +101,7 @@ $(document).ready(function(){
                     points += 0.5;
                 }
             }
-            return points/courses.length;
+            return (points/courses.length).toFixed(2);
         }
     }
 });
